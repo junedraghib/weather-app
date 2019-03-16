@@ -5,8 +5,7 @@ const path = require('path')
 //hbs is the template or views engine
 const hbs = require('hbs')
 
-//getting port value from the evvironment variable OR 3000 on local host
-const port = process.env.PORT || 3000
+
 //require local file
 const geocode = require("./utils/geocode") 
 const forecast = require("./utils/forecast") 
@@ -20,6 +19,9 @@ const forecast = require("./utils/forecast")
 
 //using express() to create a server
 const app = express()
+
+//getting port value from the evvironment variable OR 3000 on local host
+const port = process.env.PORT || 3000
 
 //setting up public paths
 const publicDirPath = path.join(__dirname, '../public')

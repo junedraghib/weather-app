@@ -4,6 +4,9 @@ const express = require('express')
 const path = require('path')
 //hbs is the template or views engine
 const hbs = require('hbs')
+
+//getting port value from the evvironment variable OR 3000 on local host
+const port = process.env.PORT || 3000
 //require local file
 const geocode = require("./utils/geocode") 
 const forecast = require("./utils/forecast") 
@@ -137,7 +140,7 @@ app.get("*", (req, res) => {
 })
 
 //used to make server listen on port 3000
-app.listen(3000, () => {
-    console.log("server is up on port on port 3000")
+app.listen(port, () => {
+    console.log("server is up on port on port "+port)
 })
 
